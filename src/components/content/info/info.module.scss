@@ -1,0 +1,126 @@
+$border-color: #e0e0e0;
+
+.infoBlock {
+  margin-top: 50px;
+  position: relative;
+  padding: 50px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #666;
+  background: rgba(215, 211, 211, 0.42);
+  box-shadow: 0 0 5px 5px rgba(139, 139, 139, 0.58);
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  font-weight: bold;
+}
+
+.infoBlock h2 {
+  margin: 30px;
+}
+
+.info li {
+  list-style-type: none;
+}
+
+.hide {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.info {
+  padding: 50px;
+  background: #fff;
+  max-width: 800px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.infoItem {
+  display: grid;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.btn {
+  margin: 0 auto;
+}
+
+.infoLabel {
+  padding: 20px 0;
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  color: #51a6d5;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:before {
+    content: '➥';
+    color: #d4def3;
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    top: 22px;
+    left: 12px;
+    display: inline-block;
+  }
+
+  input[type=checkbox]:checked ~ &:before {
+    transform: rotate(90deg);
+  }
+}
+
+.infoChild {
+  margin: 0;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+
+  opacity: 0;
+  height: 0;
+  transform: scale(1, 0);
+  transform-origin: center top;
+
+  input[type=checkbox]:checked ~ & {
+
+    border: 1px solid $border-color;
+    margin: 0 -20px 15px -20px;
+    background: #fff;
+    box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.16);
+    padding: 30px;
+
+    height: auto;
+    opacity: 1;
+    transform: scale(1, 1);
+
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .infoChild {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .infoLabel {
+    &:before {
+      display: none;
+    }
+  }
+}

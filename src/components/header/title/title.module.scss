@@ -1,0 +1,40 @@
+.title {
+  background: rgba(30, 116, 172, 0.47);
+  max-width: 500px;
+  min-width: 400px;
+  height: 380px;
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 20px 20px;
+}
+
+.title * {
+  color: #9bdbe2;
+  position: relative;
+  bottom: 30px;
+}
+
+.ex {
+  grid-column-start: 2;
+  padding-top: 70px;
+}
+
+.title h1 {
+  font-size: 55px;
+}
+
+.ex h1:first-letter {
+  color: #fff
+}
+
+.btn {
+  top: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+  .title {
+    max-width: 400px;
+    min-width: 300px;
+  }
+}

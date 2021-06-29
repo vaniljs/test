@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import classes from './App.module.css';
+import React from "react";
+import {connect} from "react-redux";
+import {openModal} from "./store/actions/actions";
+import Header from "./components/header/header";
+import NavBar from "./components/navBar/navBar";
+import Content from "./components/content/content";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    render() {
+        return <div className={classes.App}>
+            <Header openModal={this.props.openModal}/>
+            <NavBar/>
+            <Content/>
+        </div>
+    }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return {
+
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        openModal: () => dispatch(openModal())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
