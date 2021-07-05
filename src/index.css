@@ -18,6 +18,8 @@ body {
     margin: 0;
     padding: 0;
     animation: fadeIn 1s;
+    overflow-x:hidden;
+    color: slategray;
 }
 
 input:focus, textarea:focus {
@@ -28,15 +30,31 @@ a {
     color: #000 !important;
     text-decoration: none;
 }
- * {
-     font-family: 'Oswald', sans-serif;
- }
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+img {
+    pointer-events: none;
+}
 
 @-webkit-keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
+
 @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
+
+

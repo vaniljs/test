@@ -7,14 +7,16 @@ $border-color: #e0e0e0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #666;
-  background: rgba(215, 211, 211, 0.42);
-  box-shadow: 0 0 5px 5px rgba(139, 139, 139, 0.58);
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
   height: inherit;
   font-weight: bold;
+}
+
+.heading {
+  max-width: 1440px;
 }
 
 .infoBlock h2 {

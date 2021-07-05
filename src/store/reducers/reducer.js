@@ -15,12 +15,14 @@ export default function reducer(state = initialState, action) {
         case CLOSE_MODAL:
             return {
                 ...state,
-                modal: false
+                modal: false,
+                isCheckThePass: false
             }
         case CHECK_THE_PASS:
             return {
                 ...state,
-                isCheckThePass: !state.isCheckThePass
+                isCheckThePass: true,
+                modal: true
             }
         default:
             return state

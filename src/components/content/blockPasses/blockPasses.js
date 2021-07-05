@@ -2,6 +2,7 @@ import classes from './blockPasses.module.scss'
 import imgMKAD from './../../../store/images/mkad.jpg'
 import imgTTK from './../../../store/images/ttk.jpg'
 import imgSK from './../../../store/images/sk.jpg'
+import Heading from "../elements/heading/heading";
 import Modal from "./modal/modal";
 import ButtonForOrderingInCardPass from "../elements/buttonForOrderingInCardPass/buttonForOrderingInCardPass";
 
@@ -33,14 +34,19 @@ function BlockPasses(props) {
                 <div className={classes.infoText}>
                     <p>{elem.text}</p>
                 </div>
+                <div className={classes.prices}>
+                    <p>Временный пропуск <span>3500₽</span></p>
+                    <p>На 6 месяцев <span>10500₽</span></p>
+                    <p>На 12 месяцев <span>15000₽</span></p>
+                </div>
                 <div onClick={props.openModal}><ButtonForOrderingInCardPass/></div>
             </div>
         </article>
     })
 
     return <div className={classes.blockPasses} id='Виды пропусков'>
-        <Modal modal={props.modal} closeModal={props.closeModal}/>
-        <p className={classes.title}>Виды пропусков</p>
+        <Modal modal={props.modal} closeModal={props.closeModal} isCheckThePass={props.isCheckThePass}/>
+        <div className={classes.heading}><Heading text={'ВИДЫ ПРОПУСКОВ'}/></div>
         <section className={classes.grid}>
             {passes}
         </section>

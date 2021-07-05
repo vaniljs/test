@@ -1,11 +1,14 @@
 .blockPasses {
   max-width: 100%;
   position: relative;
-  background: rgba(215, 211, 211, 0.42);
-  box-shadow: 0 0 5px 5px rgba(139, 139, 139, 0.58);
 }
 
-.blockPasses p {
+.heading {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.title {
   font-size: 36px;
   font-family: 'Oswald', sans-serif;
   color: #3C93D5;
@@ -21,7 +24,7 @@
   grid-template-columns: repeat(3, 350px);
   column-gap: 30px;
   row-gap: 30px;
-  padding: 20px 20px;
+  padding: 0 20px 20px 20px;
   justify-content: center;
 }
 
@@ -58,7 +61,7 @@
 .info h2 {
   font-family: 'Roboto Condensed', Тahoma, sans-serif;
   color: #337AB7;
-  font-size: 24px;
+  font-size: 34px;
   font-weight: normal;
   margin: 0;
   text-align: center;
@@ -71,6 +74,16 @@
 .infoText p:last-child {
   margin-bottom: 0;
 }
+
+.prices p {
+  color: #3C93D5;
+  font-weight: bold;
+}
+
+.prices span {
+  color: #149a14;
+}
+
 .gridItem .button-wrap {
   display: block;
   width: 100%;

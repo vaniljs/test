@@ -1,5 +1,6 @@
 import './table.scss'
 import ButtonForOrderingInCardPass from "../elements/buttonForOrderingInCardPass/buttonForOrderingInCardPass";
+import Heading from "../elements/heading/heading";
 
 function Table(props) {
 
@@ -20,47 +21,56 @@ function Table(props) {
         </svg>
     </div>
 
-    return <div className="table" id='Документы'>
-        <div className="table-cell"></div>
-        <div className="table-cell plattform">
-            <h3>ФИЗ ЛИЦА И ИП</h3>
-            <div onClick={props.openModal}><ButtonForOrderingInCardPass/></div>
+    return <div id='Документы'>
+        <div style={{maxWidth: '1440px', margin: '0 auto'}}><Heading text={'НЕОБХОДИМЫЕ ДОКУМЕНТЫ'}/></div>
+        <div className="attention">
+            <div className="attentionText">
+                <h3>ВНИМАНИЕ!<br/>ТРЕБУЕТСЯ СКАН ДОКУМЕНТОВ</h3>
+            </div>
         </div>
-        <div className="table-cell enterprise">
-            <h3>ЮР. ЛИЦА</h3>
-            <div onClick={props.openModal}><ButtonForOrderingInCardPass/></div>
+        <div className="table">
+            <div className="table-cell"></div>
+            <div className="table-cell plattform">
+                <h3>ФИЗ ЛИЦА И ИП</h3>
+                <div onClick={props.openModal}><ButtonForOrderingInCardPass/></div>
+            </div>
+            <div className="table-cell enterprise">
+                <h3>ЮР. ЛИЦА</h3>
+                <div onClick={props.openModal}><ButtonForOrderingInCardPass/></div>
+            </div>
+            <div className="table-cell cell-feature">ПТС (Паспорт транспортного средства) — 2 стороны</div>
+            {green}
+            {blue}
+            <div className="table-cell cell-feature">СТС (Свидетельство транспортного средства) — 2 стороны</div>
+            {green}
+            {blue}
+            <div className="table-cell cell-feature">ВУ (Водительское удостоверение) — 2 стороны</div>
+            {green}
+            {blue}
+            <div className="table-cell cell-feature">Паспорт водителя (только граждане РФ)</div>
+            {green}
+            {blue}
+            <div className="table-cell cell-feature">Паспорт собственника ТС (2-3 стр., актуальная регистрация)</div>
+            {green}
+            {blue}
+            <div className="table-cell cell-feature">Диагностическая карта (технический осмотр — с актуальным сроком
+                действия (не позднее 2 месяцев на дату подачи документов на регистрацию пропуска) — 2 стороны
+            </div>
+            {green}
+            {blue}
+            <div className="table-cell cell-feature">Договор Лизинга (если собственник Лизингополучатель)</div>
+            {green}
+            {blue}
+            <div className="table-cell cell-feature">Договор Аренды (в случае, если собственник не является лицом от
+                которого подаем заявление в департамент
+            </div>
+            {green}
+            {blue}
+            <div className="table-cell cell-feature">Договор на грузоперевозку, либо Товарно-Транспортную накладную
+            </div>
+            <div className="table-cell"></div>
+            {blue}
         </div>
-        <div className="table-cell cell-feature">ПТС (Паспорт транспортного средства) — 2 стороны</div>
-        {green}
-        {blue}
-        <div className="table-cell cell-feature">СТС (Свидетельство транспортного средства) — 2 стороны</div>
-        {green}
-        {blue}
-        <div className="table-cell cell-feature">ВУ (Водительское удостоверение) — 2 стороны</div>
-        {green}
-        {blue}
-        <div className="table-cell cell-feature">Паспорт водителя (только граждане РФ)</div>
-        {green}
-        {blue}
-        <div className="table-cell cell-feature">Паспорт собственника ТС (2-3 стр., актуальная регистрация)</div>
-        {green}
-        {blue}
-        <div className="table-cell cell-feature">Диагностическая карта (технический осмотр — с актуальным сроком
-            действия (не позднее 2 месяцев на дату подачи документов на регистрацию пропуска) — 2 стороны
-        </div>
-        {green}
-        {blue}
-        <div className="table-cell cell-feature">Договор Лизинга (если собственник Лизингополучатель)</div>
-        {green}
-        {blue}
-        <div className="table-cell cell-feature">Договор Аренды (в случае, если собственник не является лицом от
-            которого подаем заявление в департамент
-        </div>
-        {green}
-        {blue}
-        <div className="table-cell cell-feature">Договор на грузоперевозку, либо Товарно-Транспортную накладную</div>
-        <div className="table-cell"></div>
-        {blue}
     </div>
 }
 

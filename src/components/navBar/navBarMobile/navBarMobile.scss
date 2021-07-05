@@ -1,189 +1,151 @@
-$items: 5;
-$transition-duration: 0.5s;
-$transition-delay: 0.05s;
+$primary-color: rgba(39, 120, 174, 0.8);
+$space-m: 16px;
 
-.container {
-    display: block;
+.number a {
+    margin-right: 10px;
+}
+
+.number span {
+    color: white;
+}
+
+.images img {
+    position: relative;
+    top: 3px;
+    right: 30px;
+    width: 30px;
+    margin: 0 0 0 10px;
+}
+
+.mobile-menu {
     position: fixed;
-    top: 20px;
-    z-index: 9990;
-    max-width: 300px;
-    height: 300px;
-    border-radius: 0 0 50px 0;
-}
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 $space-m;
+    top: 0;
+    background-color: $primary-color;
+    left: 0;
+    right: 0;
+    height: 50px;
+    z-index: 9999999;
 
-#toggle {
-    position: absolute;
-    left: -100%;
-    top: -100%;
-}
-
-#toggle:focus {
-
-    & ~ .toggle-container .button-toggle {
-        box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-}
-
-#toggle:checked {
-    & ~ .toggle-container .button-toggle {
-        box-shadow: 0 0 0 550px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1);
-
-        &:hover {
-            box-shadow: 0 0 0 550px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1);
-            background: #3C93D5;
-        }
-
-        &:before {
-            transform: translateY(-50%) rotate(45deg) scale(1);
-            background: #799bb3;
-        }
-
-        &:after {
-            transform: translateY(-50%) rotate(-45deg) scale(1);
-            background: #de1dc5;
-        }
+    &__btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 30px;
+        cursor: pointer;
+        transition: .4s;
     }
 
-    &:focus ~ .toggle-container .button-toggle {
-        box-shadow: 0 0 0 550px rgb(246, 245, 245), inset 0 0 0 20px rgb(255, 255, 255), 0 0 0 8px rgb(255, 255, 255), inset 0 0 0 20px rgb(255, 255, 255);
+    &__icon {
+        display: block;
+        position: relative;
+        background: rgba(255,255,255,1);
+        width: 90%;
+        height: 4px;
+        transition: .4s;
+
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            background: rgba(255,255,255,1);
+            width: 100%;
+            height: 4px;
+            transition: .4s;
+        }
+        &::after {
+            top: 8px;
+        }
+        &::before {
+            top: -8px;
+        }
     }
 
-    & ~ .nav {
-        margin-bottom: 100px;
-        pointer-events: auto;
-        transform: translate(50px, 50px);
+    &__container {
+        position: fixed;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 50px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        height: 0;
+        opacity: 1;
+        transition: .5s;
+        transition-delay: .2s;
+        overflow: hidden;
+        background-color: $primary-color;
+    }
 
-        .nav-item {
-            color: #EC7263;
-            letter-spacing: 0;
-            height: 40px;
-            line-height: 40px;
-            margin-top: 0;
-            opacity: 1;
-            transform: scaleY(1);
-            transition: $transition-duration, opacity 0.1s;
+    &__list {
+        transition: .5s;
+        transition-delay: .5s;
+        list-style: none;
+        padding-left: 0;
+        margin-top: -50px;
+    }
 
-            @for $i from 1 through $items {
-                &:nth-child(#{$i}) {
-                    $delay: ($items - $i) * $transition-delay;
-                    transition-delay: $delay;
-                    &:before {
-                        transition-delay: $delay;
+    &__item {
+        font-size: 26px;
+        padding-bottom: 15px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    &__checkbox {
+        display: none;
+
+        &:checked ~ {
+            .mobile-menu {
+
+                &__nav {
+                    opacity: 1;
+                    transition-delay: 0s;
+                }
+
+                &__container {
+                    height: 100%;
+                    transition-delay: 0s;
+                }
+
+                &__btn {
+                    .mobile-menu__icon {
+                        background: transparent;
+
+                        &::before,
+                        &::after {
+                            top: 0;
+                        }
+
+                        &::after {
+                            transform: rotate(-45deg);
+                            -webkit-transform: rotate(-45deg);
+                        }
+
+                        &::before {
+                            transform: rotate(45deg);
+                            -webkit-transform: rotate(45deg);
+                        }
                     }
                 }
             }
-
-            &:before {
-                opacity: 0;
-            }
         }
-    }
-
-        &:before {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-}
-
-.button-toggle {
-    position: absolute;
-    display: inline-block;
-    background: white;
-    width: 40px;
-    height: 40px;
-    margin: 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 100%;
-    transition: $transition-duration + 0.1;
-
-    &:hover {
-        box-shadow: 0 0 0 8px rgb(255, 255, 255), inset 0 0 0 20px rgb(255, 255, 255);
-    }
-
-    &:before, &:after {
-        position: absolute;
-        content: '';
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #EC7263;
-        border-radius: 5px;
-        transition: $transition-duration;
-    }
-
-    &:before {
-        transform: translateY(-50%) rotate(45deg) scale(0);
-    }
-
-    &:after {
-        transform: translateY(-50%) rotate(-45deg) scale(0);
-    }
-}
-
-.nav {
-    width: 300px;
-    display: inline-block;
-    margin: 25px 25px 20px;
-    pointer-events: none;
-    transition: $transition-duration;
-}
-
-.nav-item {
-    position: relative;
-    display: inline-block;
-    float: left;
-    clear: both;
-    color: transparent;
-    font-size: 14px;
-    letter-spacing: -6.2px;
-    height: 7px;
-    line-height: 7px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    transform: scaleY(0.2);
-    transition: $transition-duration, opacity 1s;
-
-    @for $i from 1 through $items {
-        &:nth-child(#{$i}) {
-            $delay: ($i - 1) * $transition-delay;
-            transition-delay: $delay;
-            &:before {
-                transition-delay: $delay;
-            }
-        }
-    }
-
-    &:nth-child(1) {
-        letter-spacing: -8px;
-    }
-
-    &:nth-child(2) {
-        letter-spacing: -7px;
-    }
-
-    &:nth-child(n + 4) {
-        letter-spacing: -8px;
-        margin-top: -7px;
-        opacity: 0;
-    }
-
-    &:before {
-        position: absolute;
-        content: '';
-        top: 20%;
-        right: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #eeeeee;
-        transform: translateY(-50%) scaleY(5);
-        transition: $transition-duration;
     }
 }
 
 @media only screen and (min-width: 1025px) {
-    .container {
+    .test {
         display: none;
     }
 }

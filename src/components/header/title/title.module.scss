@@ -1,40 +1,64 @@
 .title {
-  background: rgba(30, 116, 172, 0.47);
-  max-width: 500px;
-  min-width: 400px;
-  height: 380px;
-  border-radius: 30px;
+  position: relative;
+  bottom: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 20px 20px;
-}
-
-.title * {
-  color: #9bdbe2;
-  position: relative;
-  bottom: 30px;
-}
-
-.ex {
-  grid-column-start: 2;
-  padding-top: 70px;
-}
-
-.title h1 {
-  font-size: 55px;
-}
-
-.ex h1:first-letter {
-  color: #fff
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .btn {
-  top: 20px;
+  grid-column-start: 2;
+  grid-row-start: 1;
 }
 
-@media only screen and (max-width: 480px) {
-  .title {
-    max-width: 400px;
-    min-width: 300px;
-  }
+.btn2 {
+  position: relative;
+  bottom: 30px;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.messengers {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  margin: 0 auto;
+  position: relative;
+  bottom: 40px;
+  grid-column-start: 2;
+  grid-row-start: 3;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.56);
+  border-radius: 10px;
+}
+
+.number {
+  margin: 0 10px;
+  position: relative;
+  top: 10px;
+}
+
+.number span, .mail span {
+  color: #1f3255;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.number span:hover, .mail span:hover {
+  color: #8596ba;
+  transition: .3s;
+}
+
+.icons {
+  position: relative;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.icons img {
+  position: relative;
+  width: 30px;
+  height: auto;
 }

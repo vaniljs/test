@@ -1,0 +1,58 @@
+.pouring {
+  max-width: 100%;
+  margin: 30px auto;
+  font-size: 60px;
+  font-weight: 900;
+  position: relative;
+  background: rgba(255, 255, 255, 0);
+  overflow: hidden;
+  text-transform: uppercase;
+  text-align: center;
+}
+.pouring:before {
+  content: '';
+  position: absolute;
+  filter: blur(10px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 1em, #335066 1em, #264b66 50%), repeating-linear-gradient(45deg, #1e303d, #142d40 1em, #FFF 1em, #BFE2FF 50%);
+  background-size: 3em 3em, 2em 2em;
+  animation-name: ani;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.pouring hr {
+    border: 0;
+    height: 4px;
+    margin: 30px 0;
+    background-image: linear-gradient(to right, #BFE2FF 50%, #337AB7 50%, #337AB7 60%, #ff9100 60%, #ff9100 70%, #05b5e6 70%, #05b5e6 80%, #b448b8 80%, #b448b8 90%, #BFE2FF 90%, #BFE2FF 100%);
+}
+@keyframes ani {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+@media (max-width:810px) {
+  .pouring {font-size: 50px;}
+}
+
+@media (max-width:650px) {
+  .pouring {font-size: 40px;}
+}
+
+@media (max-width:525px) {
+  .pouring {font-size: 30px;}
+}
+
+@media (max-width:410px) {
+  .pouring {font-size: 25px;}
+}

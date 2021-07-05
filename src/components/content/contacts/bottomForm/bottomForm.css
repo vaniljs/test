@@ -18,6 +18,28 @@
     padding-right: 10px;
 }
 
+.numberBottomForm span {
+    font-size: 30px;
+    color: #4AB9F2;
+    transition: .3s;
+}
+
+.numberBottomForm span:hover {
+    font-size: 30px;
+    color: #2e7295;
+    transition: .3s;
+}
+
+.mail-adress span {
+    color: slategray;
+    transition: .3s;
+}
+
+.mail-adress span:hover {
+    color: #415365;
+    transition: .3s;
+}
+
 @media only screen and (max-width: 800px) {
     .bottom-contacts {
         grid-template-columns: 1fr;

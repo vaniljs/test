@@ -12,10 +12,31 @@
     overflow: hidden;
 }
 
+.logo1 img {
+    position: relative;
+    right: 475px;
+    top: 10px;
+    width: 30px;
+}
+
+.logo2 img {
+    position: relative;
+    bottom: 50px;
+    right: 475px;
+    width: 80px;
+    animation: spin 5s linear 0s infinite;
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
 .allNavBar ul {
+    z-index: 10;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
     margin: 0;
     padding: 0;
@@ -79,7 +100,7 @@
     border: 2px solid rgba(227, 235, 243, 0.38);
     position: relative;
     overflow: visible;
-    top: 40px;
+    bottom: 79px;
 }
 .allNavBar hr:after {
     content: "";

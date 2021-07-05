@@ -13,8 +13,15 @@
   transition: $args;
 }
 
-body {
-  color: slategray;
+.attention {
+  max-width: 300px;
+  margin: 0 auto;
+  background: yellow;
+}
+
+.attentionText {
+  color: #d41414;
+  padding: 5px;
 }
 
 .table {

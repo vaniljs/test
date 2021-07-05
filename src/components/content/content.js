@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import classes from './content.module.scss'
 import {openModal, closeModal, checkThePass} from "../../store/actions/actions";
 import BlockPasses from "./blockPasses/blockPasses";
-import Text from "./text/text";
+import Steps from "./steps/steps";
 import Info from "./info/info";
 import Table from "./table/table";
 import Contacts from "./contacts/contacts";
@@ -11,10 +11,10 @@ import Contacts from "./contacts/contacts";
 class Content extends React.Component {
     render() {
         return <div className={classes.content}>
-            <Text checkThePass={this.props.checkThePass} isCheckThePass={this.props.isCheckThePass}/>
-            <BlockPasses openModal={this.props.openModal} closeModal={this.props.closeModal} modal={this.props.modal}/>
-            <Info openModal={this.props.openModal}/>
+            <BlockPasses openModal={this.props.openModal} closeModal={this.props.closeModal} modal={this.props.modal} isCheckThePass={this.props.isCheckThePass}/>
+            <Steps openModal={this.props.openModal}/>
             <Table openModal={this.props.openModal}/>
+            <Info openModal={this.props.openModal}/>
             <Contacts/>
         </div>
     }

@@ -11,6 +11,12 @@
   border-radius: 5px;
   width: 70%;
   margin: 0 auto;
-  height: 500px;
+  height: 600px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+}
+
+@media only screen and (max-width: 870px) {
+  .checkThePass iframe {
+    width: 95%;
+  }
 }
